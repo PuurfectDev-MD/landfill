@@ -4,8 +4,7 @@ const theme_btn = document.getElementById("theme_btn");
 const theme_btn_img = document.getElementById("theme_btn_img");
 
 theme_btn.addEventListener("click", () => {
-    // THIS LINE IS THE KEY: It tells Tailwind to switch to dark mode
-    document.documentElement.classList.toggle("dark");
+ document.documentElement.classList.toggle("dark");
 
     if (theme_btn_img.src.includes("light.png")) {
         theme_btn_img.src = "/assets/images/dark.png";
