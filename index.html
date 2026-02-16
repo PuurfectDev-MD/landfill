@@ -5,32 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="/script.js"></script> 
     <title>Landfill</title>
+    <style>
+        /* This prevents the flash by hiding them before the external CSS even loads */
+        .project-drawing { opacity: 0; }
+    </style>
+
+    <script>
+        if(localStorage.getItem("theme") == "dark"){
+            document.documentElement.classList.add('dark')
+        }
+    </script>
 </head>
+
 <body class = "bg-page-bg text-primary-text  dark:bg-page-bg transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
-    <img src="\assets\images\circuit_drawing.png" class="project-drawing absolute top-0 left-0 -z-10 w-[25rem] h-[25rem] rotate-[20deg] ml-[-3rem] mt-[-5rem] hidden md:block">
+     
+    <div id="navplaceholder"></div>
+    <script type="module"> /* injecting navbar into the html for faster loading*/
+        import { setupNavbar } from '/navbar.js';
+        setupNavbar();
+    </script>
 
-    <img src="\assets\images\near365_circuit.png" class="project-drawing  w-[25rem] h-[25 rem] rotate-[40deg] absolute right-[-8rem] top-[1rem]">
+    <img src="/assets/images/circuit_drawing.png" fetchpriority="high" class="project-drawing absolute top-0 left-0 -z-10 w-[25rem] h-[25rem] rotate-[20deg] ml-[-3rem] mt-[-5rem] hidden md:block ">
 
-    <img src="\assets\images\box_drawing.png.png" class="project-drawing absolute w-[25rem] h-[25rem] rotate-[300deg] bottom-[-5rem] right-[5rem]">
-    <img src="\assets\images\device-drawing.png.png" class=" project-drawing absolute w-[25rem] h-[30rem] rotate-[-20deg] bottom-[-10rem] left-[-1rem] hidden opacity-90 md:block">
+    <img src="/assets/images/near365_circuit.png" fetchpriority="high" class="project-drawing  w-[25rem] h-[25rem] rotate-[40deg] absolute right-[-8rem] top-[1rem]">
+
+    <img src="/assets/images/box_drawing.png.png" fetchpriority="high" class="project-drawing absolute w-[25rem] h-[25rem] rotate-[300deg] bottom-[-5rem] right-[5rem]">
+    <img src="/assets/images/device-drawing.png.png" class=" project-drawing absolute w-[25rem] h-[30rem] rotate-[-20deg] bottom-[-10rem] left-[-1rem] hidden opacity-90 md:block">
     <img src="/assets/images/pawpad_drawing.png" class="project-drawing w-[25rem] h-[25rem] left-1/3 absolute bottom-[-10rem] rotate-[30deg] hidden md:block opacity-80">
-    
-
-    <nav class="realtive flex items-center justify-center p-10 ">
-        <ul class = "flex flex-col md:flex-row justify-center gap-x-8 font-[Doto] " >
-            <li ><a class= "inline-block px-3 py-2 text-[30px] font-extrabold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200"  href="#home">Home</a></li>
-            <li ><a class= "inline-block px-3 py-2  text-[30px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="#projects">Projects</a></li>
-            <li ><a class= "inline-block px-3 py-2  text-[30px] font-bold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200" href="#learned">.Learned</a></li>
-            <li><a class= "inline-block px-3 py-2  text-[30px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="#me">Me</a></li>
-
-             <button id="theme_btn" class="absolute right-1/5 top-[3.4rem] hover: cursor-pointer"><img id="theme_btn_img" src="/assets/images/light.png" class="w-16 h-8"></button> 
-        </ul>
-       
-    
-    </nav>
+   
 
 <div class="flex-grow flex items-center justify-center">
-        <h1 id="main-tile" class="text-7xl font-bold text-center mb-[10rem] font-[Pixelify_Sans] "> My Maker Landfill :) </h1>
+        <h1 id="main-tile" class="text-7xl font-bold text-center mb-[10rem] font-pixelify_bold "> My Maker Landfill :) </h1>
 </div>
 
 

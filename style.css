@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap'); /*doto and pixelify*/
 @import "tailwindcss";
 
 
@@ -6,8 +5,10 @@
 
 @theme {
     --color-page-bg: oklch(98.2% 0.018 155.826); /* green-50 background */
-    --color-primary-text: oklch(13% 0.028 261.692)/* black*/
+    --color-primary-text: oklch(13% 0.028 261.692);/* black*/
     
+    --font-pixelify_bold: "Pixelify_Sans",san-serif;
+    --font-doto_semibold : "Doto", san-serif;
 }
 
 
@@ -17,4 +18,27 @@
           --color-primary-text: oklch(98.5% 0 0); /* white*/
     }
   
+}
+
+@font-face {
+    font-family: 'Pixelify_Sans';
+    src: url(/assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf)format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Doto";
+    src: url(/assets/fonts/Doto/static/Doto-SemiBold.ttf)format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.project-drawing{
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    cursor: pointer;
 }
