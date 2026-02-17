@@ -4,18 +4,36 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+    /* defining default theme constrains */
     --color-page-bg: oklch(98.2% 0.018 155.826); /* green-50 background */
     --color-primary-text: oklch(13% 0.028 261.692);/* black*/
+
+    --color-card-border: oklch(92.5% 0.084 155.995); /* green 200*/
+    --color-card-hover: oklch(96.2% 0.044 156.743); /*green 100*/
+    --color-card-background: oklch(97.7% 0.013 236.62); /*sky 50*/
+    --color-card-text: oklch(13% 0.028 261.692);
     
+
+
     --font-pixelify_bold: "Pixelify_Sans",san-serif;
     --font-doto_semibold : "Doto", san-serif;
+    --font-bitcountGridDouble_medium: "Bitcount_Grid_Double", san-serif;
+    --font-schoolbell: "Schoolbell",san-serif;
 }
 
 
 @layer base{
     .dark{
-          --color-page-bg: oklch(21% 0.006 285.885);
-          --color-primary-text: oklch(98.5% 0 0); /* white*/
+        --color-page-bg: oklch(21% 0.006 285.885);
+        --color-primary-text: oklch(98.5% 0 0); /* white*/
+
+            
+        --color-card-border: oklch(92% 0.004 286.32); /* zinc 200*/
+        --color-card-hover: oklch(70.4% 0.04 256.788); /*green 100*/
+        --color-card-background:oklch(75.866% 0.05126 146.931) ;/*grey 300*/
+        --color-card-text: oklch(100% 0.00011 271.152);
+        
+
     }
   
 }
@@ -36,6 +54,22 @@
     font-display: swap;
 }
 
+
+@font-face {
+    font-family: "Bitcount_Grid_Double";
+    src: url(public\assets\fonts\Bitcount_Grid_Double\static\BitcountGridDouble-Medium.ttf)format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Schoolbell";
+    src: url(public\assets\fonts\Schoolbell\Schoolbell-Regular.ttf)format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 .project-drawing{
     opacity: 0;

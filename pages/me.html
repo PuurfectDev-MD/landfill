@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <script type="module" src="../script.js"></script> 
-</body>
     <title>Me :)</title>
+
 </head>
 
 <body class = "bg-page-bg text-primary-text  dark:bg-page-bg transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
@@ -14,8 +15,19 @@
         import { setupNavbar } from '/navbar.js';
         setupNavbar();
     </script>
-    
-    <h1>ITS ME!</h1>
+
+
+    <div id=" me-grid" class="grid grid-cols-2">
+        <div id = "my_picture" class="justify-center">
+            <img src="/public/assets/images/my-face.png " class="w-72 h-72 rounded-full bg-amber-500 p-8" >
+        </div>
+
+        <div id = "text_content" class="grid grid-cols-1">
+            <h>Helllo!</h>
+            <p>Im Manish.</p>
+        </div>
+
+    </div>
 
 
 </body>
