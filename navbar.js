@@ -1,12 +1,16 @@
 export function setupNavbar() {
     const navHTML = ` <nav class="realtive flex items-center justify-center p-10 ">
-        <ul class = "flex flex-col md:flex-row justify-center gap-x-8 font-doto_semibold " >
-            <li ><a class= "inline-block px-3 py-2 text-[30px] font-extrabold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200"  href="/index.html">Home</a></li>
-            <li ><a class= "inline-block px-3 py-2  text-[30px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/project.html">Projects</a></li>
-            <li ><a class= "inline-block px-3 py-2  text-[30px] font-bold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200" href="/pages/learned.html">.Learned</a></li>
-            <li><a class= "inline-block px-3 py-2  text-[30px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/me.html">Me</a></li>
+        <ul class = "flex flex-col md:flex-row justify-center gap-x-[4%] font-doto_semibold " >
+            <li ><a class= "inline-block px-10 lg:px-3 py-2 px-3 lg:text-[30px] text-[30px]  md:text-[24px] md:px-1 font-extrabold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200"  href="/index.html">Home</a></li>
+            <hr class= "lg:hidden md:hidden ">
+            <li ><a class= "inline-block px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/project.html">Projects</a></li>
+              <hr class= "lg:hidden md:hidden ">
+            <li ><a class= "inline-block px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200" href="/pages/learned.html">.Learned</a></li>
+              <hr class= "lg:hidden md:hidden ">
+            <li><a class= "inline-block px-13 md:px-3 lg:px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/me.html">Me</a></li>
+              <hr class= "lg:hidden md:hidden ">
 
-             <button id="theme_btn" class="absolute right-1/5 top-[3.4rem] hover: cursor-pointer"><img id="theme_btn_img" src="/assets/images/light.png" class="w-16 h-8"></button> 
+             <button id="theme_btn" class="absolute lg:right-[15%] md:right-[15%] right-[20%] top-[7.5%]  hover: cursor-pointer"><img id="theme_btn_img" src="/assets/images/light.png" class="w-16 h-8"></button> 
         </ul>
        
     
