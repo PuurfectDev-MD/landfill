@@ -24,7 +24,7 @@ if (svg_item){
       circle.setAttribute("cx", point.x)
       circle.setAttribute("cy", point.y)
 
-      circle.setAttribute("r", Math.random()*8 +5)
+      circle.setAttribute("r", Math.random()*10 +5)
       var color = Math.floor(Math.random()*3)
       var colorValue
       if(color ==0){
