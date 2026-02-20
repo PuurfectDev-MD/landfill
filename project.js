@@ -23,6 +23,6 @@ export const projects =[
         title: "This very website",
         description: "Personal website to reflex me and store my wacky-cool-creative projects whatver they may be",
         link: "#project2",
-        tags: ["meow meow", "cat", "python", "image"]
+        tags: ["javascript", "fun", "simple", "website"]
     }
 ]

@@ -61,12 +61,13 @@ if (main_pg_drawings.length >0){  /*checks if drawings exist and then listens fo
 
 
 // for project page
-
+const searchInput = document.getElementById("search_input")
 const projectGrid = document.getElementById("project-grid")
+
 if (projectGrid){
   const projectCards = projects.map(project =>
     ` <div class="bg-card-background p-6 rounded-2xl shadow-amber-300 hover:bg-card-hover hover:scale-105 transition-all border border-card-hover border-2 text-card-text">
-           <a href= "${project.url}">
+           <a href= "${project.link}">
             <h2 class="font-bitcountGridDouble_medium text-2xl">${project.title}</h2>
             <p class="py-4 font-schoolbell">${project.description}</p>
             </a>
@@ -74,7 +75,41 @@ if (projectGrid){
   ).join('')
   
     projectGrid.innerHTML = projectCards
+
+    searchInput.addEventListener('input', function(e){
+      if (e.searchInput != ""){
+        const searchTerm = e.target.value.toLowerCase();
+        handleSearch(searchTerm)
+      }
+    })
+
+    
 }
+
+
+function handleSearch(query){
+  const LcQuery = query.toLowerCase()
+  console.log("Seraching for: ", query)
+  var search_display = []
+  projects.forEach((project) => {
+    const titleMatch = project.title.toLowerCase().includes(LcQuery)
+    const tagMatch = project.tags.some(tag => tag.toLowerCase().includes(LcQuery))
+    if (titleMatch || tagMatch){
+      var search_result = ` <div class="bg-card-background p-6 rounded-2xl shadow-amber-300 hover:bg-card-hover hover:scale-105 transition-all border border-card-hover border-2 text-card-text">
+           <a href= "${project.link}">
+            <h2 class="font-bitcountGridDouble_medium text-2xl">${project.title}</h2>
+            <p class="py-4 font-schoolbell">${project.description}</p>
+            </a>
+        </div>`
+
+        search_display.push(search_result)
+    }
+  }
+)
+
+projectGrid.innerHTML = search_display.join('')
+  }
+
 
 
 
