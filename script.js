@@ -66,7 +66,7 @@ const projectGrid = document.getElementById("project-grid")
 
 if (projectGrid){
   const projectCards = projects.map(project =>
-    ` <div class="bg-card-background p-6 rounded-2xl shadow-amber-300 hover:bg-card-hover hover:scale-105 transition-all border border-card-hover border-2 text-card-text">
+    ` <div class="bg-card-background p-6 rounded-2xl transition-all  border-2 text-card-text dark:border-amber-100  hover:border-3 hover:scale-105 dark:text-black dark:hover:shadow-[0_0_20px_rgba(251,191,36,0.8)]">
            <a href= "${project.link}">
             <h2 class="font-bitcountGridDouble_medium text-2xl">${project.title}</h2>
             <p class="py-4 font-schoolbell">${project.description}</p>
@@ -83,7 +83,13 @@ if (projectGrid){
       }
     })
 
+    searchInput.addEventListener(('focus'), () =>{
+      searchInput.style.transform = "scale(1.05)"
+    })
     
+    searchInput.addEventListener(('blur'), () =>{
+      searchInput.style.transform = "scale(1.0)"
+    })
 }
 
 
@@ -95,13 +101,12 @@ function handleSearch(query){
     const titleMatch = project.title.toLowerCase().includes(LcQuery)
     const tagMatch = project.tags.some(tag => tag.toLowerCase().includes(LcQuery))
     if (titleMatch || tagMatch){
-      var search_result = ` <div class="bg-card-background p-6 rounded-2xl shadow-amber-300 hover:bg-card-hover hover:scale-105 transition-all border border-card-hover border-2 text-card-text">
+      var search_result =  ` <div class="bg-card-background p-6 rounded-2xl transition-all border border-card-hover border-2 text-card-text hover:border-black hover:border-3 hover:scale-105 dark:text-black">
            <a href= "${project.link}">
             <h2 class="font-bitcountGridDouble_medium text-2xl">${project.title}</h2>
             <p class="py-4 font-schoolbell">${project.description}</p>
             </a>
         </div>`
-
         search_display.push(search_result)
     }
   }

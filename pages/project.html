@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/script.js"></script>
     <title>Landfill's Projects</title>
-    <script type="module" src="../script.js"></script> 
+    
+    <script>
+    if(localStorage.getItem("theme") == "dark"){
+        document.documentElement.classList.add('dark')
+    }
+    </script>
 </head>
 
 <body class = "bg-page-bg text-primary-text  dark:bg-page-bg transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
@@ -15,7 +21,7 @@
         setupNavbar();
     </script>
     <div class="relative h-24 ">
-        <input id="search_input" placeholder="need to find smth?" type="search" class="absolute bg-green-100 border-stone-950 rounded-2xl h-[60%] w-[85%] m-5 left-[5%] placeholder:font-doto_semibold placeholder:px-5 hover:scale-105">
+        <input id="search_input" placeholder="need to find smth?" type="search" class="glow absolute bg-green-100 border-stone-950 rounded-2xl h-[60%] w-[85%] m-5 left-[5%] placeholder:font-bitcountGridDouble_medium dark:placeholder:text-black placeholder:px-5 dark:text-black caret-black transition-all ease-in-out pl-10 dark:bg-amber-100 dark:glow">
     </div>
     <div id = "project-grid" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
        
