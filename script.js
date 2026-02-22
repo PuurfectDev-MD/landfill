@@ -1,7 +1,6 @@
 import './style.css';
 import  {projects} from './project'
-
-
+import { beenInfo } from './been';
 
 const main_pg_drawings = document.querySelectorAll(".project-drawing");
 const svg_item = document.querySelector('svg')
@@ -64,7 +63,9 @@ if (main_pg_drawings.length >0){  /*checks if drawings exist and then listens fo
 const searchInput = document.getElementById("search_input")
 const projectGrid = document.getElementById("project-grid")
 
+
 if (projectGrid){
+
   const projectCards = projects.map(project =>
     ` <div class="bg-card-background p-6 rounded-2xl transition-all  border-2 text-card-text dark:border-amber-100  hover:border-3 hover:scale-105 dark:text-black dark:hover:shadow-[0_0_20px_rgba(251,191,36,0.8)]">
            <a href= "${project.link}">
@@ -78,7 +79,7 @@ if (projectGrid){
 
     searchInput.addEventListener('input', function(e){
       if (e.searchInput != ""){
-        const searchTerm = e.target.value.toLowerCase();
+        const searchTerm = e.target.value.toLowerCase()
         handleSearch(searchTerm)
       }
     })
@@ -115,6 +116,37 @@ function handleSearch(query){
 projectGrid.innerHTML = search_display.join('')
   }
 
+
+// for .been page
+
+// const been_placeholder = document.getElementById("been_placeholder")
+
+
+// if (been_placeholder){
+//   console.log("Beeninfo placeholder found")
+//   const beenDisplay = beenInfo.map(been =>
+//     ` <div class= "w-screen">
+//         <h1 class="font-bold font-pixelify_bold text-4xl pl-10">Been ${been.connecter}</h1>
+//         <div class="grid grid-cols-2">
+//             <div class= " p-[10%]">
+//                   <h2 class="">${been.title}</h2>
+//                     <p>${been.description}</p>
+//                     <p>${been.date}</p>
+//             </div>
+//             <div>
+//                 <img src="${been.photos[0]}" class= "w-[30%] h-[60%]">
+//                  <img src="${been.photos[1]}" class= "w-[30%] h-[60%]">
+
+
+//             </div>
+      
+//         </div>
+
+//     </div>`
+//   ).join(``)
+
+//   been_placeholder.innerHTML = beenDisplay
+//   }
 
 
 

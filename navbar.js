@@ -5,7 +5,7 @@ export function setupNavbar() {
             <hr class= "lg:hidden md:hidden ">
             <li ><a class= "inline-block px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/project.html">Projects</a></li>
               <hr class= "lg:hidden md:hidden ">
-            <li ><a class= "inline-block px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200" href="/pages/learned.html">.Learned</a></li>
+            <li ><a class= "inline-block px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100 hover:text-black hover:scale-110 transform transition duration-200" href="/pages/been.html">.Been</a></li>
               <hr class= "lg:hidden md:hidden ">
             <li><a class= "inline-block px-13 md:px-3 lg:px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/me.html">Me</a></li>
               <hr class= "lg:hidden md:hidden ">

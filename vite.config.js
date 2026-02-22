@@ -12,7 +12,7 @@ export default defineConfig({
       input:{
         main: resolve(__dirname,"index.html"),
         projects: resolve(__dirname, "pages/project.html"),
-        learned: resolve(__dirname, "pages/learned.html"),
+        been: resolve(__dirname, "pages/been.html"),
         me: resolve(__dirname,"pages/me.html")
   
       }

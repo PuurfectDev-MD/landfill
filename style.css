@@ -45,7 +45,7 @@
         @apply shadow-[0_0_100px_5px_rgba(161,240,194,0.8)] scale-105;
     }
     .dark .dark\:glow{
-        @apply shadow-[0_0_20px_rgba(251,191,36,0.8)]
+        @apply shadow-[0_0_20px_rgba(251,191,36,0.8)] scale-105;
     }
 }
 
@@ -107,4 +107,3 @@
     filter: blur(5px); 
 }
 
-/*  */

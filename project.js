@@ -6,6 +6,7 @@ export const projects =[
         description: "A cool looking paw shaped macropad for cat people",
         link: "https://github.com/PuurfectDev-MD/Purrfect-Pad",
         tags: ["pawpad", "macropad", "cat", "electronics", "pcb"],
+        image: "/assets/images/3dCad.png",
         status: "completed"
     },
     {
@@ -24,13 +25,13 @@ export const projects =[
     },
     {
         title: "This very website",
-        description: "Personal website to reflex me and store my wacky-cool-creative projects whatver they may be",
+        description: "Personal website to reflect me and store my wacky-cool-creative projects whatver they may be",
         link: "https://github.com/PuurfectDev-MD/landfill",
         tags: ["javascript", "fun", "simple", "website"],
             status: "completed"
     },{
         title: "Esp32 Personal assistant",
-        description: "Productive device with Ai api to ask queries and vision to see you",
+        description: "Productivity device with Ai api to ask queries and vision to see you",
         link:"https://github.com/PuurfectDev-MD/esp32-personal-assistant",
         tags:["esp32", "AI", "productivity", "vision", "micropython"],
             status: "completed"
