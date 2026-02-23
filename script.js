@@ -1,18 +1,20 @@
 import './style.css';
 import  {projects} from './project'
-import { beenInfo } from './been';
+import { beenInfo } from './been'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const main_pg_drawings = document.querySelectorAll(".project-drawing");
-const svg_item = document.querySelector('svg')
+const svg_item = document.querySelector("#svg_item_main")
 
 if (svg_item){
   window.addEventListener('load', () => {
     const path =svg_item.querySelector("path")
     if (!path) return
 
-
-    const totalLength = path.getTotalLength();
-    const numDots =20;
+    const totalLength = path.getTotalLength()
+    const numDots =20
 
     for(let i=0; i<numDots; i++){
       const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle")
@@ -119,34 +121,65 @@ projectGrid.innerHTML = search_display.join('')
 
 // for .been page
 
-// const been_placeholder = document.getElementById("been_placeholder")
+const been_placeholder = document.getElementById("been_placeholder")
+
+if (been_placeholder){
+  console.log("Beeninfo placeholder found")
+
+  const beenDisplay = beenInfo.map(been =>
+    ` <div class= "w-screen">
+        <h1 class="font-bold font-pixelify_bold text-4xl pl-10">Been ${been.connecter}</h1>
+        <div class="grid grid-cols-2">
+            <div class= " p-[10%]">
+                  <h2 class="">${been.title}</h2>
+                    <p>${been.description}</p>
+                    <p>${been.date}</p>
+            </div>
+            <div>
+                <img src="${been.photos[0]}" class= "w-[30%] h-[60%]">
+                 <img src="${been.photos[1]}" class= "w-[30%] h-[60%]">
 
 
-// if (been_placeholder){
-//   console.log("Beeninfo placeholder found")
-//   const beenDisplay = beenInfo.map(been =>
-//     ` <div class= "w-screen">
-//         <h1 class="font-bold font-pixelify_bold text-4xl pl-10">Been ${been.connecter}</h1>
-//         <div class="grid grid-cols-2">
-//             <div class= " p-[10%]">
-//                   <h2 class="">${been.title}</h2>
-//                     <p>${been.description}</p>
-//                     <p>${been.date}</p>
-//             </div>
-//             <div>
-//                 <img src="${been.photos[0]}" class= "w-[30%] h-[60%]">
-//                  <img src="${been.photos[1]}" class= "w-[30%] h-[60%]">
-
-
-//             </div>
+            </div>
       
-//         </div>
+        </div>
 
-//     </div>`
-//   ).join(``)
+    </div>`
+  ).join(``)
 
-//   been_placeholder.innerHTML = beenDisplay
-//   }
+  been_placeholder.innerHTML = beenDisplay
+
+  const been_svg_item = document.querySelector("#been_svg_item")
+  const path = been_svg_item.querySelector("path")
+
+  if (path){
+      const pathLength = path.getTotalLength()
+      console.log(pathLength)
+      
+      gsap.set(path, {strokeDasharray:pathLength})
+
+      gsap.fromTo(
+          path,{
+            strokeDashoffset: pathLength,
+          },
+          {
+            strokeDashoffset: 0,
+            duration:10,
+            ease:"none",
+            scrollTrigger:{
+              trigger:"#been_svg_item",
+              start: "top top",
+              end: "bottom bottom",
+              scrub:1,
+            }
+          }
+
+        )
+
+  }else{
+    console.log("couldnt calculate length")
+  }
+}
 
 
 
