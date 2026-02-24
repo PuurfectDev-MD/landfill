@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import { info } from 'autoprefixer';
 gsap.registerPlugin(ScrollTrigger)
 
 gsap.set(".been_svg_item path", {visibility:"visible"})
@@ -125,6 +126,10 @@ projectGrid.innerHTML = search_display.join('')
 
 
 // for .been page
+
+
+
+const cardElements = []
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrambleTextPlugin)
  gsap.set(".hero_text", {visibility:"visible"})
@@ -169,10 +174,9 @@ const been_placeholder = document.getElementById("been_placeholder")
 
 if (been_placeholder){
   console.log("Beeninfo placeholder found")
- 
-
-  const beenDisplay = beenInfo.map(been =>
-    ` <div class= "w-screen z-10">
+  const parser = new DOMParser();
+  beenInfo.forEach((been) =>{
+    const beenDisplay = ` <div class= "w-screen z-10 bg-amber-600">
         <h1 class=" font-bold font-pixelify_bold text-4xl pl-10">Been ${been.connecter}</h1>
         <div class="grid grid-cols-2">
             <div class= " p-[10%]">
@@ -189,24 +193,29 @@ if (been_placeholder){
       
         </div>
 
-    </div>`
-  ).join(``)
+    </div>`.trim()
 
-  been_placeholder.innerHTML = beenDisplay
+        const doc = parser.parseFromString(beenDisplay, 'text/html')
+        const cardNode = doc.body.firstChild
+        gsap.set(cardNode, {opacity:0, y:30})
+        cardElements.push(cardNode)
+        been_placeholder.appendChild(cardNode);
+  })
 
   const been_svg_item = document.querySelector("#been_svg_item")
   const path = been_svg_item.querySelector("path")
   
   if (path){
-      const content_height = (been_placeholder.scrollHeight) + 450
-      been_svg_item.style.height = content_height + "px"
+
+      // const content_height = (been_placeholder.scrollHeight) + 450
+      // been_svg_item.style.height = content_height + "px"
       console.log("Height set for svg")
       const pathLength = path.getTotalLength()
       console.log(pathLength)
       
       gsap.set(path, {strokeDasharray:pathLength})
 
-        const restrictedLength = 1500
+        const restrictedLength = 2500
         const availableLength = pathLength-restrictedLength
         const segmentLegnth = availableLength/beenAtcount
         let attempts = 0
@@ -230,12 +239,12 @@ if (been_placeholder){
           circle.style.opacity = "0"
           circle.style.pointerEvents = "auto"
           circle.style.cursor = "pointer"
+          circle.dataset.index = placedDots
           circle.dataset.distance = randomPointPlace
           circle.classList.add("attentionDot")
           
           been_svg_item.querySelector("svg").appendChild(circle)
           placedDots ++
-        
 
 
         }
@@ -265,11 +274,24 @@ if (been_placeholder){
                   const dotVisible = dot.getAttribute("data-visible") === "true"
                   console.log("dotdistance= " + dotDistance)
 
+                  const cardIndex = dot.dataset.index
+                  const targetElement = cardElements[cardIndex]
+
+                  
+
                   if (currentlengthDrawn >= dotDistance){
                     if(!dotVisible){
                       dot.setAttribute("data-visible","true")
                       gsap.to(dot, {opacity:1, duration: 0.3,overwrite: "auto"})
                       dot.style.animation = "scaleAndBlur 2s infinite ease-in-out";
+
+                      gsap.to(targetElement,{
+                        opacity:1,
+                        overwrite: "auto",
+                        duration: 0.8,
+                        y:0
+                    
+                      })
                       
                     }
                     
@@ -278,6 +300,14 @@ if (been_placeholder){
                       dot.setAttribute("data-visible", "false")
                       dot.style.animation = "none"
                       gsap.to(dot,{opacity:0, duration:0.3, overwrite: "auto" })
+
+                      gsap.to(targetElement,{
+                        opacity:0,
+                        overwrite: "auto",
+                        duration: 0.8,
+                        y:30
+
+                      })
                       
                     }
                     
