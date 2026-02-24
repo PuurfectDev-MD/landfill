@@ -3,7 +3,11 @@ import  {projects} from './project'
 import { beenInfo } from './been'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SplitText } from "gsap/SplitText";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 gsap.registerPlugin(ScrollTrigger)
+
+gsap.set(".been_svg_item path", {visibility:"visible"})
 
 const beenAtcount = 7
 const main_pg_drawings = document.querySelectorAll(".project-drawing");
@@ -121,6 +125,45 @@ projectGrid.innerHTML = search_display.join('')
 
 
 // for .been page
+gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrambleTextPlugin)
+ gsap.set(".hero_text", {visibility:"visible"})
+  gsap.set(".second_text", {visibility:"visible"})
+
+document.fonts.ready.then(() => {
+    gsap.to(".second_text", {
+    duration: 1, 
+    scrambleText: {
+      text: "Scroll >>>", 
+      chars: "???#### :((( :)))", 
+      revealDelay: 1, 
+      speed: 0.5
+    }
+    })
+
+
+    let split= SplitText.create(".hero_text",{
+    type: "chars, words",
+    wordsClass: "word++",
+    } )
+
+    gsap.from(split.chars,{
+    yPercent: "random([100,100])",
+    rotation: "random(-30,30)",
+    ease: "back.out",
+    autoAlpha:0,
+    stagger: {
+      each: 0.06,
+      from: "random",
+    }
+
+    })
+
+})
+
+
+
+
 
 const been_placeholder = document.getElementById("been_placeholder")
 
@@ -163,7 +206,7 @@ if (been_placeholder){
       
       gsap.set(path, {strokeDasharray:pathLength})
 
-        const restrictedLength = 1300
+        const restrictedLength = 1500
         const availableLength = pathLength-restrictedLength
         const segmentLegnth = availableLength/beenAtcount
         let attempts = 0
@@ -196,8 +239,6 @@ if (been_placeholder){
 
 
         }
-
-
 
         gsap.fromTo(
           path,{

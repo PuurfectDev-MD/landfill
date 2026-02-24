@@ -97,6 +97,17 @@
 }
 
 
+.been_svg_item path {
+  visibility: hidden;
+}
+
+.hero_text{
+    visibility: hidden;
+}
+
+.second_text{
+    visibility: hidden;
+}
 @keyframes blink {
     0%, 20%  {
         opacity: 0;
@@ -139,4 +150,11 @@
     transform-origin: center;
     animation: none 1s infinite ease-in-out;
     will-change: transform , opacity, filter;
+}
+
+.word3{
+    color: brown;
+    font-style: italic;
+    padding-left: 4px;
+    padding-right: 8px;
 }
