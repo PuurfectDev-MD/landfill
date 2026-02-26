@@ -10,7 +10,7 @@ export function setupNavbar() {
             <li><a class= "inline-block px-13 md:px-3 lg:px-3 py-2  text-[30px] lg:text-[30px] md:text-[24px] font-bold rounded-lg hover:bg-teal-100  hover:text-black hover:scale-110 transform transition duration-200" href="/pages/me.html">Me</a></li>
               <hr class= "lg:hidden md:hidden ">
 
-             <button id="theme_btn" class="absolute lg:right-[15%] lg:top-14 md:right-[15%] right-[20%] top-1/12 -translate-y-1/12  hover: cursor-pointer"><img id="theme_btn_img" src="/assets/images/light.png" class="w-16 h-8"></button> 
+             <button id="theme_btn" class="absolute  right-[2%]  top-8 lg:right-[15%] lg:top-14 md:right-[15%] lg:top-1/12 lg:-translate-y-1/12  hover: cursor-pointer "><img id="theme_btn_img" src="/assets/images/light.png" class="w-16 h-8"></button> 
         </ul>
        
     

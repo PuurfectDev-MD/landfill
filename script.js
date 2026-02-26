@@ -175,24 +175,23 @@ if (been_placeholder){
   console.log("Beeninfo placeholder found")
   const parser = new DOMParser();
   beenInfo.forEach((been) =>{
-    const beenDisplay = `<div class="been-card w-full h-full fixed inset-0 flex items-center justify-center pointer-events-none ">
-                <div class="glowXl bg-been_card_background p-10 rounded-2xl pointer-events-auto border-been_border_card text-been_text_card" style="width: 80%; max-width: 800px;">
-                    <h1 class="font-bold font-pixelify_bold text-4xl">Been ${been.connecter}</h1>
-                    <div class="grid grid-cols-2 gap-8">
+    const beenDisplay = `<div class="been-card w-full h-full fixed md:inset-0 top-5 left-0 flex items-center justify-center pointer-events-none ">
+                <div class="glowXl bg-been_card_background md:p-10 p-4 rounded-2xl pointer-events-auto border-been_border_card text-been_text_card" style="width: 80%; max-width: 800px;">
+                    <h1 class="font-bold font-pixelify_bold text-2xl md:text-4xl">Been ${been.connecter}</h1>
+                    <div class="grid grid-cols-2 md:gap-8 gap-6">
                         <div>
                             <h2 class="mt-5">${been.title}</h2>
-                            <p class= "mt-2">${been.description}</p>
-                            <p>${been.date}</p>
+                            <p class= "mt-2 md:block hidden ">${been.description}</p>
+                            <p class="pt-4 hidden md:block">${been.date}</p>
                         </div>
                         <div class="flex gap-2">
-                            <img src="${been.photos[0]}" class="w-1/2 h-auto object-cover">
-                            <img src="${been.photos[1]}" class="w-1/2 h-auto object-cover">
+                            <img src="${been.photos[0]}"class="md:block hidden w-1/2 h-auto object-cover">
+                            <img src="${been.photos[1]}" class="md:w-1/2 w-full h-auto object-cover">
                         </div>
                           <div>
-                             <p>${been.comments}</p>
+                             <p class="pt-4 md:hidden block">${been.date}</p>
+                             <p class="md:block hidden">${been.comments}</p>
                            </div>
-
-                            
                            <video class="relative right-0 pointer-events-auto" width="640", height= "auto" controls>
                                    <source src="${been.video}" type="video/mp4">
                            </video>
