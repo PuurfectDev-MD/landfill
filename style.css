@@ -126,6 +126,11 @@
 .second_text{
     visibility: hidden;
 }
+
+.question_mark{
+    border: 4px;
+    background: red;
+}
 @keyframes blink {
     0%, 20%  {
         opacity: 0;

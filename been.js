@@ -10,7 +10,7 @@ export const beenInfo = [
         date: "2023",
         location: "UAE, Abhu Dhabi",
         photos: ["/assets/images/been/robotics.webp", "/assets/images/been/robot.webp"],
-        video: ["a", "b"]
+        video: null
     },
     {
         connecter: "at",
@@ -20,7 +20,7 @@ export const beenInfo = [
         location: "UAE, Abhu Dhabi",
         date:"2023",
         photos: ["/assets/images/been/makex.webp", "y"],
-        video: ["a", "b"]
+        video: null
     },
     {
         connecter: "at",
@@ -29,8 +29,9 @@ export const beenInfo = [
         comments:"Got all gold medals (total 3!!!) for all the competiton - game/speech/ar and vr experience devlopment",
         location: "UAE, Dubai",
         date: "2024",
-        photos: ["x", "y"],
-        video: ["x", "y"]
+        photos: [],
+        video: null,
+        resources: ["https://drive.google.com/file/d/1nJemglsXH5-fLXxxavT8RwRKPnB2NSnw/view?usp=drive_link"]
     },
        {
         connecter: "at",
@@ -40,7 +41,7 @@ export const beenInfo = [
         location: "UAE, Dubai",
         date: "2024",
         photos: ["x", "y"],
-        video: ["x", "y"]
+        video: null
     },
     {
         connecter: "at",
@@ -61,8 +62,9 @@ export const beenInfo = [
         comments:"This was just all so messed up. No plan no proper team. No expertise. Just got me to get back to web dev after that pathetic attempt 😭 ",
         location: "Virtual",
         date: "2024",
-        photos: ["x", "y"],
-        video: ["x", "y"]
+        photos: [],
+        video: "/assets/images/been/space_app.demo.mp4",
+        resources: ["https://github.com/PuurfectDev-MD/NASA-SPACE-APP"]
 
     },
     {
@@ -73,7 +75,7 @@ export const beenInfo = [
         location: "Virtual",
         date: "2026",
         photos: ["x", "y"],
-        video: ["x", "y"]
+        video: null
 
     }
 
